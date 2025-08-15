@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fathima Safiya | Portfolio</title>
+  <link rel="icon" type="image/png" href="profile.jpg">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Devicon Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- FontAwesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0a0f1c;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      padding: 15px 0;
+      background: rgba(10, 15, 28, 0.8);
+
+    }
+
+    .nav-link {
+      color: #cbd5e1 !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #60a5fa !important;
+    }
+
+    #hero {
+      min-height: 70vh;
+      background: linear-gradient(120deg, #1e3a8a, #0ea5e9, #38bdf8);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+
+    .hero-text h1 {
+      font-weight: 800;
+      font-size: 3.4rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(270deg, #0b0b75, #132f5a, #0d0d48);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .hero-text h3 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .hero-btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      border: none;
+      background: white;
+      color: #0ea5e9;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      background: #0ea5e9;
+      color: white;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.5);
+    }
+
+    .hero-photo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+      backdrop-filter: blur(10px);
+      cursor: default;
+    }
+
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+
+    #about {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 25px;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      text-align: center;
+      cursor: default;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+    }
+
+    .skill-card i {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: #38bdf8;
+    }
+
+    .skill-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 18px;
+    }
+
+    #contact form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 35px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-submit {
+      background: #38bdf8;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      position: relative;
+    }
+
+    footer .social-icons {
+      margin-top: 8px;
+    }
+
+    footer .social-icons a {
+      color: #38bdf8;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #60a5fa;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-photo img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="container">
+    <div class="row align-items-center" style="margin-left: 180px;">
+      <div class="col-md-6 hero-text" data-aos="fade-right">
+        <h1>Hi, I'm <span>Safiya</span></h1>
+        <h3>Full-Stack Developer</h3>
+        <p style="text-align: justify;">Crafting secure, responsive, and user-focused web applications that combine
+          clean, modern UI design with
+          robust back-end architecture. I build fast, scalable, and intuitive solutions that work seamlessly across all
+          devices.</p>
+        <a href="#projects"><button class="hero-btn">View My Work</button></a>
+      </div>
+      <div class="col-md-6 hero-photo" data-aos="fade-left">
+        <img src="profile.jpg" alt="Safiya">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="my-5 container" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <p style="text-align: justify;">I’m a passionate Full-Stack Developer skilled in Java, Spring Boot, MySQL,
+      JavaScript, and Bootstrap. I build modern, responsive web applications that combine clean design with robust
+      back-end functionality.
+
+      My key project, the Gym Management System, demonstrates my ability to create complex,
+      user-friendly solutions that optimize business operations.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills</h2>
+      <div class="row g-4">
+
+        <!-- Programming Languages -->
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-java-plain"></i>
+            <p>Java</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-javascript-plain"></i>
+            <p>JavaScript</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-html5-plain"></i>
+            <p>HTML5</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-css3-plain"></i>
+            <p>CSS3</p>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-mysql-plain"></i>
+            <p>MySQL</p>
+          </div>
+        </div>
+
+        <!-- Frameworks & Libraries -->
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-spring-plain"></i>
+            <p>Spring Boot</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-bootstrap-plain"></i>
+            <p>Bootstrap</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-angularjs-plain"></i>
+            <p>Angular</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-hibernate-plain"></i>
+            <p>Hibernate</p>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-vscode-plain"></i>
+            <p>VS Code</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-intellij-plain"></i>
+            <p>IntelliJ IDEA</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-mysql-plain"></i>
+            <p>MySQL Workbench</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2" data-aos="zoom-in">
+          <div class="skill-card"><i class="devicon-postman-plain"></i>
+            <p>Postman</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Project</h2>
+      <div class="row g-4">
+
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+            data-title="Gym Management System for Power World Gym"
+            data-description="Here is a short video of the system including all modules." data-video="gymproject.mp4">
+            <!-- Local MP4 file -->
+            <img src="login.png" alt="Gym Management System for Power World Gym">
+            <div class="content">
+              <h5 style="color: #ffcd00; text-align: center;">Gym Management System | Final Year Individual Project</h5>
+              <p style="text-align: justify;">
+                Developed a full-stack, responsive web application to digitize and streamline gym operations, including
+                member management, workout plans, inventory, and payments. Implemented secure role-based access,
+                real-time validations, modular CRUD features, and printable reports to enhance administrative
+                efficiency.
+
+                <br><br>
+
+                Modules: Member Management, Membership Management, Member Has Membership, Invoice & Membership Payment,
+                Workout Plan Management, Attendance Tracking, Supplier & Supplier Payment Management, Purchase Order
+                Management, Item & Inventory Management, Item Receive Note (IRN), Employee Management, Security &
+                Privileges, Report Generation.
+
+                <br><br>
+
+                <span style="color: #ffcd00; font-weight: 600; margin-left: 66px;">
+                  Note: Click this to watch a short video demonstrating all system modules and features in action.
+                </span>
+
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Contact Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="https://formspree.io/f/mldlavpz" method="POST" data-aos="fade-up" novalidate>
+            <div class="mb-3">
+              <label>Name</label>
+              <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label>Message</label>
+              <textarea name="message" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send</button>
+          </form>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Safiya. All rights reserved.
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="projectDescription">Project description goes here.</p>
+          <div class="ratio ratio-16x9">
+            <iframe id="projectVideo" src="" title="Project Video" allowfullscreen allow="autoplay"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({once: true, duration: 900, easing: 'ease-in-out'});
+
+    // Modal content update
+    var projectModal = document.getElementById('projectModal')
+    projectModal.addEventListener('show.bs.modal', function (event) {
+      var triggerElement = event.relatedTarget
+
+      // Extract info from data attributes
+      var title = triggerElement.getAttribute('data-title')
+      var description = triggerElement.getAttribute('data-description')
+      var videoSrc = triggerElement.getAttribute('data-video')
+
+      // Update modal content
+      var modalTitle = projectModal.querySelector('.modal-title')
+      var modalDesc = projectModal.querySelector('#projectDescription')
+      var modalVideo = projectModal.querySelector('#projectVideo')
+
+      modalTitle.textContent = title
+      modalDesc.textContent = description
+      modalVideo.src = videoSrc + "?autoplay=1&rel=0"
+    })
+
+    // Clear video on modal close to stop playback
+    projectModal.addEventListener('hidden.bs.modal', function () {
+      var modalVideo = projectModal.querySelector('#projectVideo')
+      modalVideo.src = ""
+    })
+  </script>
+</body>
+
+</html>
